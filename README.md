@@ -37,3 +37,6 @@ all_gsod_aqi_merged_data文件夹为输出数据
 10.	使用autogluon进行训练，预测，推理和评估
 aqi_predictor.py
 autogluon_aqi_predictor文件夹为训练生成的模型，用于后续的预测
+
+附：数据清洗
+clean_aqi_data.py 对上面各阶段产出的 CSV 做统一清洗（负浓度、缺失值、重复日期、越界 AQI/气象值），只读原文件、输出到新路径，按表头自动识别 openaq / integrated / aqi / merged 四类形态并输出清洗报告。用法与约定见 AGENTS.md。测试：python -m unittest discover -s tests -v
